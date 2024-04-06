@@ -8,12 +8,15 @@
 import UIKit
 import SnapKit
 
+
 class LoginView: UIView{
     let emailLabel = UILabel()
     let passwordLabel = UILabel()
     let signUpLabel = UILabel()
     let loginButton = UIButton()
     var passwordTextField: PasswordTextField?
+    var emailTextField: EmailTextField?
+    var errorLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,9 +40,9 @@ class LoginView: UIView{
             make.width.equalTo(frame.size.width).multipliedBy(0.2)
         }
         
-        let emailTextField = EmailTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 0))
-        addSubview(emailTextField)
-        emailTextField.snp.makeConstraints { make in
+        emailTextField = EmailTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 0))
+        addSubview(emailTextField!)
+        emailTextField?.snp.makeConstraints { make in
             make.top.equalTo(emailLabel.snp.bottom)
             make.left.equalToSuperview().inset(frame.size.width * 0.12)
             make.right.equalToSuperview().inset(frame.size.width * 0.12)
@@ -52,7 +55,7 @@ class LoginView: UIView{
         addSubview(passwordLabel)
         passwordLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(frame.size.width * 0.12)
-            make.top.equalTo(emailTextField.snp.bottom).offset(10)
+            make.top.equalTo(emailTextField!.snp.bottom).offset(10)
             make.width.equalTo(frame.size.width).multipliedBy(0.2)
         }
         
@@ -66,6 +69,7 @@ class LoginView: UIView{
         }
         
         loginButton.setTitle("Login", for: .normal)
+        loginButton.addTarget(self, action: #selector(loginTouch), for: .touchUpInside)
         loginButton.titleLabel?.font = UIFont(name: "Poppins", size: 35)
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.backgroundColor = UIColor(named: "BackgroundColor")
@@ -87,6 +91,25 @@ class LoginView: UIView{
         signUpLabel.snp.makeConstraints { make in
             make.top.equalTo(loginButton.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
+        }
+        
+//        labelError.text = "dsfiojfs"
+        errorLabel.font = UIFont(name: "Poppins", size: 15)
+        errorLabel.textColor = .systemPink
+        addSubview(errorLabel)
+        errorLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(loginButton.snp.top)
+            make.centerX.equalToSuperview()
+        }
+        
+    }
+    
+    @objc func loginTouch(sender: UIButton){
+        if let (errorMessage, isValidEmail) = emailTextField?.checkEmail(){
+            errorLabel.text = errorMessage
+            if isValidEmail{
+                print("sfsf")
+            }
         }
     }
 }

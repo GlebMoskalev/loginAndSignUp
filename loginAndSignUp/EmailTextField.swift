@@ -7,9 +7,14 @@
 
 import UIKit
 
+enum emailError: String {
+    case invalidAddres = "Invalid email address"
+    case userNotExist = "User with this email does not exist"
+}
+
+
 class EmailTextField: UITextField{
-    
-//    private var width: CGFloat
+    private let dictionaryEmailPasswordTestUser = ["swift@icloud.com": "Swift#24"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +36,7 @@ class EmailTextField: UITextField{
         autocorrectionType = .no
         autocapitalizationType = .none
         minimumFontSize = 10
-        textAlignment = .right
+//        textAlignment = .right
         let paddingView = UIView.init(frame: CGRect(x: 0, y: 0, width: frame.size.width * 0.05, height: 0))
         leftView = paddingView
         leftViewMode = .always
@@ -40,5 +45,21 @@ class EmailTextField: UITextField{
         
         borderStyle = .none
         layer.cornerRadius = 20
+    }
+    
+    func checkEmail() -> (error: String, isValid: Bool) {
+        if let email = self.text, isValidEmail(email: email){
+            if dictionaryEmailPasswordTestUser.keys.contains(email){
+                return ("", true)
+            }
+            return (emailError.userNotExist.rawValue, false)
+        }
+        return (emailError.invalidAddres.rawValue, true)
+    }
+    
+    func isValidEmail(email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
     }
 }
