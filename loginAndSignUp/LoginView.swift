@@ -13,6 +13,7 @@ class LoginView: UIView{
     let passwordLabel = UILabel()
     let signUpLabel = UILabel()
     let loginButton = UIButton()
+    var passwordTextField: PasswordTextField?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,9 +56,9 @@ class LoginView: UIView{
             make.width.equalTo(frame.size.width).multipliedBy(0.2)
         }
         
-        let passwordTextField = PasswordTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        addSubview(passwordTextField)
-        passwordTextField.snp.makeConstraints { make in
+        passwordTextField = PasswordTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        addSubview(passwordTextField!)
+        passwordTextField!.snp.makeConstraints { make in
             make.top.equalTo(passwordLabel.snp.bottom)
             make.left.equalToSuperview().inset(frame.size.width * 0.12)
             make.right.equalToSuperview().inset(frame.size.width * 0.12)
@@ -71,7 +72,7 @@ class LoginView: UIView{
         addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(passwordTextField.snp.bottom).offset(frame.size.width * 0.2)
+            make.top.equalTo(passwordTextField!.snp.bottom).offset(frame.size.width * 0.2)
             make.width.equalToSuperview().multipliedBy(0.5)
             make.height.equalToSuperview().multipliedBy(0.12)
         }

@@ -116,6 +116,7 @@ class ViewController: UIViewController {
         signUpButton.removeUnderline()
         loginButton.setUnderline()
         signUpView?.removeFromSuperview()
+        signUpView = nil
         createLoginView()
     }
 
@@ -125,6 +126,7 @@ class ViewController: UIViewController {
         loginButton.removeUnderline()
         signUpButton.setUnderline()
         loginView?.removeFromSuperview()
+        loginView = nil
         createSignUpView()
     }
     
