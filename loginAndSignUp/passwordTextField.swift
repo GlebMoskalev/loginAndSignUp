@@ -19,13 +19,14 @@ class passwordTextField: emailTextField{
     }
     
     private func setupTextField(){
+        let widthButton = Int(frame.size.width / 11)
         isSecureTextEntry = true
-        let eyeButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 25))
+        let eyeButton = UIButton(frame: CGRect(x: 0, y: 0, width: widthButton, height: widthButton - 10))
         var buttonEyeConfiguration = UIButton.Configuration.plain()
         buttonEyeConfiguration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10)
         buttonEyeConfiguration.baseBackgroundColor = .clear
         eyeButton.configuration = buttonEyeConfiguration
-        let eyeImage = UIImage(named: "eye")?.resizeImageTo(size: CGSize(width: 25, height: 25))
+        let eyeImage = UIImage(named: "eye")?.resizeImageTo(size: CGSize(width: widthButton - 10, height: widthButton - 10))
         let eyeCloseImage = UIImage(named: "eye close")?.resizeImageTo(size: CGSize(width: 25, height: 25))
         eyeButton.setImage(eyeImage, for: .normal)
         eyeButton.setImage(eyeCloseImage, for: .selected)

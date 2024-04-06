@@ -60,6 +60,31 @@ class loginView: UIView{
             make.right.equalToSuperview().inset(frame.size.width * 0.12)
             make.height.equalToSuperview().multipliedBy(0.13)
         }
-        print()
+        
+        let loginButton = UIButton()
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.titleLabel?.font = UIFont(name: "Poppins", size: 35)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.backgroundColor = UIColor(named: "BackgroundColor")
+        addSubview(loginButton)
+        loginButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(passwordTextField.snp.bottom).offset(frame.size.width * 0.2)
+            make.width.equalToSuperview().multipliedBy(0.5)
+            make.height.equalToSuperview().multipliedBy(0.12)
+        }
+        loginButton.layer.cornerRadius = frame.size.width * 0.3 / 8
+        loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        loginButton.titleLabel?.minimumScaleFactor = 0.4
+        
+        let signUpLabel = UILabel()
+        signUpLabel.font = UIFont(name: "Poppins", size: 12)
+        signUpLabel.text = "or sign up here"
+        signUpLabel.textColor = UIColor(named: "BackgroundColor")
+        addSubview(signUpLabel)
+        signUpLabel.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(5)
+            make.centerX.equalToSuperview()
+        }
     }
 }

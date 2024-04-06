@@ -43,15 +43,6 @@ class ViewController: UIViewController {
     }
     
     private func configureVIew(){
-//        let customView = loginView(frame: .zero)
-//        view.addSubview(customView)
-//        customView.snp.makeConstraints { make in
-//            make.top.equalToSuperview()
-//            make.left.equalToSuperview()
-//            make.width.equalToSuperview()
-//            make.height.equalTo(200)
-//        }
-        
         view.backgroundColor = UIColor(named: "BackgroundColor")
         
         let heyLabel = UILabel()
@@ -121,55 +112,6 @@ class ViewController: UIViewController {
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }))
-        
-//        emailLabel.text = "Email"
-//        emailLabel.font = UIFont(name: "Poppins", size: 20)
-//        emailLabel.textColor = UIColor(named: "BackgroundColor")
-//        viewLogin.addSubview(emailLabel)
-//        emailLabel.snp.makeConstraints { make in
-//            make.left.equalTo(view.safeAreaLayoutGuide.layoutFrame.width * 0.12)
-//            make.top.equalTo(loginButton.snp.bottom).offset(viewLogin.safeAreaLayoutGuide.layoutFrame.width * 0.05)
-//            make.width.equalTo(viewLogin.safeAreaLayoutGuide.snp.width).multipliedBy(0.2)
-//        }
-//        
-//        let emailTextFiel = UITextField()
-//        emailTextFiel.layer.borderWidth = 2.0
-//        emailTextFiel.layer.borderColor = UIColor(named: "BackgroundColor")?.cgColor
-//        emailTextFiel.backgroundColor = .white
-//        emailTextFiel.font = UIFont.systemFont(ofSize: 30)
-//        emailTextFiel.textColor = UIColor.init(named: "BackgroundColor")
-//        emailTextFiel.adjustsFontSizeToFitWidth = true
-//        emailTextFiel.autocorrectionType = .no
-//        emailTextFiel.autocapitalizationType = .none
-//        emailTextFiel.minimumFontSize = 10
-//        emailTextFiel.textAlignment = .right
-//        let paddingView = UIView.init(frame: CGRect(x: 0, y: 0, width: viewLogin.safeAreaLayoutGuide.layoutFrame.width * 0.05, height: 0))
-//        emailTextFiel.leftView = paddingView
-//        emailTextFiel.leftViewMode = .always
-//        emailTextFiel.rightView = paddingView
-//        emailTextFiel.rightViewMode = .always
-//    
-//        viewLogin.addSubview(emailTextFiel)
-//        emailTextFiel.snp.makeConstraints { make in
-//            make.top.equalTo(emailLabel.snp.bottom)
-//            make.left.equalToSuperview().inset(viewLogin.safeAreaLayoutGuide.layoutFrame.width * 0.1)
-//            make.right.equalToSuperview().inset(viewLogin.safeAreaLayoutGuide.layoutFrame.width * 0.1)
-//            make.height.equalTo(viewLogin.safeAreaLayoutGuide.layoutFrame.height * 0.1)
-//        }
-//        emailTextFiel.borderStyle = .none
-//        emailTextFiel.layer.cornerRadius = viewLogin.safeAreaLayoutGuide.layoutFrame.width / 20
-//        
-//        
-//        passwordLabel.text = "Password"
-//        passwordLabel.font = UIFont(name: "Poppins", size: 20)
-//        passwordLabel.textColor = UIColor(named: "BackgroundColor")
-//        viewLogin.addSubview(passwordLabel)
-//        passwordLabel.snp.makeConstraints { make in
-//            make.left.equalTo(view.safeAreaLayoutGuide.layoutFrame.width * 0.12)
-//            make.top.equalTo(emailTextFiel.snp.bottom).offset(viewLogin.safeAreaLayoutGuide.layoutFrame.width * 0.05)
-//            make.width.equalTo(viewLogin.safeAreaLayoutGuide.snp.width).multipliedBy(0.3)
-//        }
-        
     }
     
     @objc func loginButtonTap(sender: UIButton){
