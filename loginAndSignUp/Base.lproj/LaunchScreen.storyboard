@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guy" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-kz-bOx">
+                                <rect key="frame" x="78.333333333333343" y="341.66666666666663" width="273.33333333333326" height="273.66666666666663"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8us-LT-EK0">
+                                <rect key="frame" x="153" y="615.33333333333337" width="267" height="98"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jSH-XZ-BkZ">
+                                <rect key="frame" x="10" y="243.66666666666663" width="190" height="98"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kMY-kz-bOx" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.293427" id="3J5-PJ-1BL"/>
+                            <constraint firstItem="jSH-XZ-BkZ" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.10515" id="5Uj-IP-Njp"/>
+                            <constraint firstItem="jSH-XZ-BkZ" firstAttribute="bottom" secondItem="kMY-kz-bOx" secondAttribute="top" id="BWU-ag-RUB"/>
+                            <constraint firstItem="8us-LT-EK0" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.10515" id="Hb3-Tx-1UY"/>
+                            <constraint firstItem="kMY-kz-bOx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ic4-R9-Xao"/>
+                            <constraint firstItem="8us-LT-EK0" firstAttribute="top" secondItem="kMY-kz-bOx" secondAttribute="bottom" id="O2V-2S-dh8"/>
+                            <constraint firstItem="kMY-kz-bOx" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.636132" id="VCh-cN-z6O"/>
+                            <constraint firstItem="kMY-kz-bOx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WdH-A2-ber"/>
+                            <constraint firstItem="jSH-XZ-BkZ" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.44186" id="XsH-zM-YWU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8us-LT-EK0" secondAttribute="trailing" constant="10" id="ceK-aW-pKa"/>
+                            <constraint firstItem="8us-LT-EK0" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.62093" id="gao-u2-dUw"/>
+                            <constraint firstItem="jSH-XZ-BkZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yI4-wU-64Z"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51.627906976744185" y="374.67811158798287"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Guy" width="250" height="250"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.33300000429153442" green="0.14900000393390656" blue="0.097999997437000275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
