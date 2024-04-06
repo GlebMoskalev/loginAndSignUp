@@ -9,6 +9,11 @@ import UIKit
 import SnapKit
 
 class loginView: UIView{
+    let emailLabel = UILabel()
+    let passwordLabel = UILabel()
+    let signUpLabel = UILabel()
+    let loginButton = UIButton()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -18,10 +23,9 @@ class loginView: UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView(){
+    func setupView(){
         backgroundColor = UIColor(named: "LoginAndSignUpColor")
         
-        let emailLabel = UILabel()
         emailLabel.text = "Email"
         emailLabel.font = UIFont(name: "Poppins", size: 20)
         emailLabel.textColor = UIColor(named: "BackgroundColor")
@@ -41,7 +45,6 @@ class loginView: UIView{
             make.height.equalToSuperview().multipliedBy(0.13)
         }
         
-        let passwordLabel = UILabel()
         passwordLabel.text = "Password"
         passwordLabel.font = UIFont(name: "Poppins", size: 20)
         passwordLabel.textColor = UIColor(named: "BackgroundColor")
@@ -61,7 +64,6 @@ class loginView: UIView{
             make.height.equalToSuperview().multipliedBy(0.13)
         }
         
-        let loginButton = UIButton()
         loginButton.setTitle("Login", for: .normal)
         loginButton.titleLabel?.font = UIFont(name: "Poppins", size: 35)
         loginButton.setTitleColor(.white, for: .normal)
@@ -77,7 +79,6 @@ class loginView: UIView{
         loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
         loginButton.titleLabel?.minimumScaleFactor = 0.4
         
-        let signUpLabel = UILabel()
         signUpLabel.font = UIFont(name: "Poppins", size: 12)
         signUpLabel.text = "or sign up here"
         signUpLabel.textColor = UIColor(named: "BackgroundColor")

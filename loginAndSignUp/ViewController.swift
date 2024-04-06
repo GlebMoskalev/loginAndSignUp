@@ -112,6 +112,14 @@ class ViewController: UIViewController {
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }))
+        
+//        let signUpView = signUpView(frame: CGRect(x: 0, y: 0, width: viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width, height: 0))
+//        viewLoginAndSignUp.addSubview(signUpView)
+//        signUpView.snp.makeConstraints(({ make in
+//            make.top.equalTo(loginButton.snp.bottom).offset(viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width * 0.05)
+//            make.bottom.equalToSuperview()
+//            make.width.equalToSuperview()
+//        }))
     }
     
     @objc func loginButtonTap(sender: UIButton){
@@ -124,6 +132,7 @@ class ViewController: UIViewController {
         actionNow = .signUp
         loginButton.removeUnderline()
         signUpButton.setUnderline()
+        
     }
 
 }

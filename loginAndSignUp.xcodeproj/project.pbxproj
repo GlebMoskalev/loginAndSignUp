@@ -18,6 +18,7 @@
 		04FC4AEA2BC12A8900E5885A /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AE92BC12A8900E5885A /* loginView.swift */; };
 		04FC4AEC2BC130D500E5885A /* emailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AEB2BC130D500E5885A /* emailTextField.swift */; };
 		04FC4AEE2BC134DC00E5885A /* passwordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AED2BC134DC00E5885A /* passwordTextField.swift */; };
+		04FC4AF02BC15FDE00E5885A /* signUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AEF2BC15FDE00E5885A /* signUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		04FC4AE92BC12A8900E5885A /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		04FC4AEB2BC130D500E5885A /* emailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailTextField.swift; sourceTree = "<group>"; };
 		04FC4AED2BC134DC00E5885A /* passwordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordTextField.swift; sourceTree = "<group>"; };
+		04FC4AEF2BC15FDE00E5885A /* signUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				04FC4AE92BC12A8900E5885A /* loginView.swift */,
 				04FC4AEB2BC130D500E5885A /* emailTextField.swift */,
 				04FC4AED2BC134DC00E5885A /* passwordTextField.swift */,
+				04FC4AEF2BC15FDE00E5885A /* signUpView.swift */,
 			);
 			path = loginAndSignUp;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FC4AF02BC15FDE00E5885A /* signUpView.swift in Sources */,
 				04D4B2092BBF17710050723C /* ViewController.swift in Sources */,
 				04FC4AEC2BC130D500E5885A /* emailTextField.swift in Sources */,
 				04D4B2052BBF17710050723C /* AppDelegate.swift in Sources */,
