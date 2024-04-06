@@ -15,10 +15,10 @@
 		04D4B2192BBF18560050723C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B2182BBF18560050723C /* Poppins-SemiBold.ttf */; };
 		04FC4AE62BBFC76E00E5885A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 04FC4AE52BBFC76E00E5885A /* SnapKit */; };
 		04FC4AE82BBFC76E00E5885A /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 04FC4AE72BBFC76E00E5885A /* SnapKit-Dynamic */; };
-		04FC4AEA2BC12A8900E5885A /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AE92BC12A8900E5885A /* loginView.swift */; };
-		04FC4AEC2BC130D500E5885A /* emailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AEB2BC130D500E5885A /* emailTextField.swift */; };
-		04FC4AEE2BC134DC00E5885A /* passwordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AED2BC134DC00E5885A /* passwordTextField.swift */; };
-		04FC4AF02BC15FDE00E5885A /* signUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AEF2BC15FDE00E5885A /* signUpView.swift */; };
+		04FC4AEA2BC12A8900E5885A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AE92BC12A8900E5885A /* LoginView.swift */; };
+		04FC4AEC2BC130D500E5885A /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AEB2BC130D500E5885A /* EmailTextField.swift */; };
+		04FC4AEE2BC134DC00E5885A /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AED2BC134DC00E5885A /* PasswordTextField.swift */; };
+		04FC4AF02BC15FDE00E5885A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4AEF2BC15FDE00E5885A /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +30,10 @@
 		04D4B2102BBF17730050723C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D4B2122BBF17730050723C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D4B2182BBF18560050723C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-SemiBold.ttf"; path = "../../../Downloads/Poppins/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		04FC4AE92BC12A8900E5885A /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
-		04FC4AEB2BC130D500E5885A /* emailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailTextField.swift; sourceTree = "<group>"; };
-		04FC4AED2BC134DC00E5885A /* passwordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordTextField.swift; sourceTree = "<group>"; };
-		04FC4AEF2BC15FDE00E5885A /* signUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpView.swift; sourceTree = "<group>"; };
+		04FC4AE92BC12A8900E5885A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		04FC4AEB2BC130D500E5885A /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		04FC4AED2BC134DC00E5885A /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		04FC4AEF2BC15FDE00E5885A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +75,10 @@
 				04D4B20D2BBF17730050723C /* Assets.xcassets */,
 				04D4B20F2BBF17730050723C /* LaunchScreen.storyboard */,
 				04D4B2122BBF17730050723C /* Info.plist */,
-				04FC4AE92BC12A8900E5885A /* loginView.swift */,
-				04FC4AEB2BC130D500E5885A /* emailTextField.swift */,
-				04FC4AED2BC134DC00E5885A /* passwordTextField.swift */,
-				04FC4AEF2BC15FDE00E5885A /* signUpView.swift */,
+				04FC4AE92BC12A8900E5885A /* LoginView.swift */,
+				04FC4AEB2BC130D500E5885A /* EmailTextField.swift */,
+				04FC4AED2BC134DC00E5885A /* PasswordTextField.swift */,
+				04FC4AEF2BC15FDE00E5885A /* SignUpView.swift */,
 			);
 			path = loginAndSignUp;
 			sourceTree = "<group>";
@@ -161,12 +161,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04FC4AF02BC15FDE00E5885A /* signUpView.swift in Sources */,
+				04FC4AF02BC15FDE00E5885A /* SignUpView.swift in Sources */,
 				04D4B2092BBF17710050723C /* ViewController.swift in Sources */,
-				04FC4AEC2BC130D500E5885A /* emailTextField.swift in Sources */,
+				04FC4AEC2BC130D500E5885A /* EmailTextField.swift in Sources */,
 				04D4B2052BBF17710050723C /* AppDelegate.swift in Sources */,
-				04FC4AEA2BC12A8900E5885A /* loginView.swift in Sources */,
-				04FC4AEE2BC134DC00E5885A /* passwordTextField.swift in Sources */,
+				04FC4AEA2BC12A8900E5885A /* LoginView.swift in Sources */,
+				04FC4AEE2BC134DC00E5885A /* PasswordTextField.swift in Sources */,
 				04D4B2072BBF17710050723C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

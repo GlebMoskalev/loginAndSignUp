@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     let signUpButton = UIButton()
     let emailLabel = UILabel()
     let passwordLabel = UILabel()
+    var loginView: LoginView?
+    var signUpView: LoginView?
     
     var actionNow = action.login {
         didSet{
@@ -105,36 +107,46 @@ class ViewController: UIViewController {
         }
         signUpButton.addTarget(self, action: #selector(signUpButtonTap), for: .touchUpInside)
         
-        let loginView = loginView(frame: CGRect(x: 0, y: 0, width: viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width, height: 0))
-        viewLoginAndSignUp.addSubview(loginView)
-        loginView.snp.makeConstraints(({ make in
+        createLoginView()
+    }
+    
+    @objc func loginButtonTap(sender: UIButton){
+        if loginView != nil { return }
+        actionNow = .login
+        signUpButton.removeUnderline()
+        loginButton.setUnderline()
+        signUpView?.removeFromSuperview()
+        createLoginView()
+    }
+
+    @objc func signUpButtonTap(sender: UIButton){
+        if signUpView != nil { return }
+        actionNow = .signUp
+        loginButton.removeUnderline()
+        signUpButton.setUnderline()
+        loginView?.removeFromSuperview()
+        createSignUpView()
+    }
+    
+    private func createLoginView(){
+        loginView = LoginView(frame: CGRect(x: 0, y: 0, width: viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width, height: 0))
+        viewLoginAndSignUp.addSubview(loginView!)
+        loginView!.snp.makeConstraints(({ make in
             make.top.equalTo(loginButton.snp.bottom).offset(viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width * 0.05)
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }))
-        
-//        let signUpView = signUpView(frame: CGRect(x: 0, y: 0, width: viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width, height: 0))
-//        viewLoginAndSignUp.addSubview(signUpView)
-//        signUpView.snp.makeConstraints(({ make in
-//            make.top.equalTo(loginButton.snp.bottom).offset(viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width * 0.05)
-//            make.bottom.equalToSuperview()
-//            make.width.equalToSuperview()
-//        }))
     }
     
-    @objc func loginButtonTap(sender: UIButton){
-        actionNow = .login
-        signUpButton.removeUnderline()
-        loginButton.setUnderline()
+    private func createSignUpView(){
+        signUpView = SignUpView(frame: CGRect(x: 0, y: 0, width: viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width, height: 0))
+        viewLoginAndSignUp.addSubview(signUpView!)
+        signUpView!.snp.makeConstraints(({ make in
+            make.top.equalTo(loginButton.snp.bottom).offset(viewLoginAndSignUp.safeAreaLayoutGuide.layoutFrame.width * 0.05)
+            make.bottom.equalToSuperview()
+            make.width.equalToSuperview()
+        }))
     }
-
-    @objc func signUpButtonTap(sender: UIButton){
-        actionNow = .signUp
-        loginButton.removeUnderline()
-        signUpButton.setUnderline()
-        
-    }
-
 }
 
 

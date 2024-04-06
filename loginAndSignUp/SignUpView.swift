@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class signUpView: loginView{
+class SignUpView: LoginView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class loginView: UIView{
+class LoginView: UIView{
     let emailLabel = UILabel()
     let passwordLabel = UILabel()
     let signUpLabel = UILabel()
@@ -36,7 +36,7 @@ class loginView: UIView{
             make.width.equalTo(frame.size.width).multipliedBy(0.2)
         }
         
-        let emailTextField = emailTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 0))
+        let emailTextField = EmailTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 0))
         addSubview(emailTextField)
         emailTextField.snp.makeConstraints { make in
             make.top.equalTo(emailLabel.snp.bottom)
@@ -55,7 +55,7 @@ class loginView: UIView{
             make.width.equalTo(frame.size.width).multipliedBy(0.2)
         }
         
-        let passwordTextField = passwordTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        let passwordTextField = PasswordTextField(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordLabel.snp.bottom)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class passwordTextField: emailTextField{
+class PasswordTextField: EmailTextField{
     
     override init(frame: CGRect) {
         super.init(frame: frame)

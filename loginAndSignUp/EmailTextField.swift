@@ -7,7 +7,7 @@
 
 import UIKit
 
-class emailTextField: UITextField{
+class EmailTextField: UITextField{
     
 //    private var width: CGFloat
     
