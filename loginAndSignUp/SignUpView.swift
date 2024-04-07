@@ -40,7 +40,7 @@ class SignUpView: LoginView{
         let repeatPasswordLabel = UILabel()
         repeatPasswordLabel.text = "Repeat password"
         repeatPasswordLabel.font = UIFont(name: "Poppins", size: 20)
-        repeatPasswordLabel.textColor = UIColor(named: "BackgroundColor")
+        repeatPasswordLabel.textColor = UIColor(named: "brown")
         addSubview(repeatPasswordLabel)
      
         
@@ -91,32 +91,32 @@ class SignUpView: LoginView{
                 return
             }
             let uppercaseLetterRegex  = ".*[A-Z]+.*"
-            var uppercasePredicate = NSPredicate(format:"SELF MATCHES %@", uppercaseLetterRegex)
-            var uppercaseResult = uppercasePredicate.evaluate(with: password)
+            let uppercasePredicate = NSPredicate(format:"SELF MATCHES %@", uppercaseLetterRegex)
+            let uppercaseResult = uppercasePredicate.evaluate(with: password)
             if !uppercaseResult{
                 errorLabel.text = PasswordError.missingUppercase.rawValue
                 return
             }
             
             let lowercaseLetterRegex = ".*[a-z]+.*"
-            var lowercasePredicate = NSPredicate(format:"SELF MATCHES %@", lowercaseLetterRegex)
-            var lowercaseResult = lowercasePredicate.evaluate(with: password)
+            let lowercasePredicate = NSPredicate(format:"SELF MATCHES %@", lowercaseLetterRegex)
+            let lowercaseResult = lowercasePredicate.evaluate(with: password)
             if !lowercaseResult{
                 errorLabel.text = PasswordError.missingLowercase.rawValue
                 return
             }
             
             let digitRegex = ".*[0-9]+.*"
-            var digitPredicate = NSPredicate(format:"SELF MATCHES %@", digitRegex)
-            var digitResult = digitPredicate.evaluate(with: password)
+            let digitPredicate = NSPredicate(format:"SELF MATCHES %@", digitRegex)
+            let digitResult = digitPredicate.evaluate(with: password)
             if !digitResult{
                 errorLabel.text = PasswordError.missingDigit.rawValue
                 return
             }
             
             let specialCharacterRegex = ".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+.*"
-            var specialPredicate = NSPredicate(format:"SELF MATCHES %@", specialCharacterRegex)
-            var specialResult = specialPredicate.evaluate(with: password)
+            let specialPredicate = NSPredicate(format:"SELF MATCHES %@", specialCharacterRegex)
+            let specialResult = specialPredicate.evaluate(with: password)
             if !specialResult{
                 errorLabel.text = PasswordError.missingSpecialCharacter.rawValue
                 return

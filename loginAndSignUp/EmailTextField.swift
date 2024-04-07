@@ -20,10 +20,10 @@ class EmailTextField: UITextField{
     
     private func setupTextField(){
         layer.borderWidth = 2.0
-        layer.borderColor = UIColor(named: "BackgroundColor")?.cgColor
+        layer.borderColor = UIColor(named: "brown")?.cgColor
         backgroundColor = .white
         font = UIFont.systemFont(ofSize: 30)
-        textColor = UIColor.init(named: "BackgroundColor")
+        textColor = UIColor.init(named: "brown")
         adjustsFontSizeToFitWidth = true
         autocorrectionType = .no
         autocapitalizationType = .none

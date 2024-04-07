@@ -38,11 +38,11 @@ class LoginView: UIView{
     }
     
     func setupView(){
-        backgroundColor = UIColor(named: "LoginAndSignUpColor")
+        backgroundColor = UIColor(named: "pink")
         
         emailLabel.text = "Email"
         emailLabel.font = UIFont(name: "Poppins", size: 20)
-        emailLabel.textColor = UIColor(named: "BackgroundColor")
+        emailLabel.textColor = UIColor(named: "brown")
         addSubview(emailLabel)
         emailLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(frame.size.width * 0.12)
@@ -61,7 +61,7 @@ class LoginView: UIView{
         
         passwordLabel.text = "Password"
         passwordLabel.font = UIFont(name: "Poppins", size: 20)
-        passwordLabel.textColor = UIColor(named: "BackgroundColor")
+        passwordLabel.textColor = UIColor(named: "brown")
         addSubview(passwordLabel)
         passwordLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(frame.size.width * 0.12)
@@ -82,7 +82,7 @@ class LoginView: UIView{
         loginButton.addTarget(self, action: #selector(loginTouch), for: .touchUpInside)
         loginButton.titleLabel?.font = UIFont(name: "Poppins", size: 35)
         loginButton.setTitleColor(.white, for: .normal)
-        loginButton.backgroundColor = UIColor(named: "BackgroundColor")
+        loginButton.backgroundColor = UIColor(named: "brown")
         addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -96,14 +96,13 @@ class LoginView: UIView{
         
         signUpLabel.font = UIFont(name: "Poppins", size: 12)
         signUpLabel.text = "or sign up here"
-        signUpLabel.textColor = UIColor(named: "BackgroundColor")
+        signUpLabel.textColor = UIColor(named: "brown")
         addSubview(signUpLabel)
         signUpLabel.snp.makeConstraints { make in
             make.top.equalTo(loginButton.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
         }
         
-//        labelError.text = "dsfiojfs"
         errorLabel.font = UIFont(name: "Poppins", size: 15)
         errorLabel.textColor = .systemPink
         addSubview(errorLabel)

@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
     
     private func configureVIew(){
-        view.backgroundColor = UIColor(named: "BackgroundColor")
+        view.backgroundColor = UIColor(named: "brown")
         
         let heyLabel = UILabel()
         heyLabel.text = "Hey!"
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         welcomeLabel.minimumScaleFactor = 0.8
 
         
-        viewLoginAndSignUp.backgroundColor = UIColor(named: "LoginAndSignUpColor")
+        viewLoginAndSignUp.backgroundColor = UIColor(named: "pink")
         view.addSubview(viewLoginAndSignUp)
         viewLoginAndSignUp.snp.makeConstraints { make in
             make.width.equalToSuperview()
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         loginButton.setTitle("Login", for: .normal)
         loginButton.setUnderline()
         loginButton.titleLabel?.font = UIFont(name: "Poppins", size: 20)
-        loginButton.setTitleColor(UIColor(named: "BackgroundColor"), for: .normal)
+        loginButton.setTitleColor(UIColor(named: "brown"), for: .normal)
         viewLoginAndSignUp.addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(10)
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(loginButtonTap), for: .touchUpInside)
         signUpButton.setTitle("Sign up", for: .normal)
         signUpButton.titleLabel?.font = UIFont(name: "Poppins", size: 20)
-        signUpButton.setTitleColor(UIColor(named: "BackgroundColor"), for: .normal)
+        signUpButton.setTitleColor(UIColor(named: "brown"), for: .normal)
         viewLoginAndSignUp.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(10)
