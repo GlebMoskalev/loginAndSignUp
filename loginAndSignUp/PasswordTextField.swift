@@ -8,7 +8,6 @@
 import UIKit
 
 class PasswordTextField: EmailTextField{
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupTextField()
@@ -39,6 +38,12 @@ class PasswordTextField: EmailTextField{
         sender.isSelected = !sender.isSelected
         isSecureTextEntry = !isSecureTextEntry
     }
+    
+//    override func isValidTextField() -> Bool {
+//        if let password = text{
+//            
+//        }
+//    }
 }
 
 

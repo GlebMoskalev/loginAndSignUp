@@ -8,7 +8,19 @@
 import UIKit
 import SnapKit
 
+enum PasswordError: String {
+    case weakPassword = "Password must be at least 8 characters long"
+    case missingUppercase = "Password must contain at least one uppercase letter"
+    case missingLowercase = "Password must contain at least one lowercase letter"
+    case missingDigit = "Password must contain at least one digit"
+    case missingSpecialCharacter = "Password must contain at least one special character"
+    case passwordMismatch = "Passwords do not match"
+    case incorrectPassword = "Incorrect password"
+}
+
 class SignUpView: LoginView{
+    
+    var repeatPasswordTextField: PasswordTextField?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,9 +51,9 @@ class SignUpView: LoginView{
                 make.width.equalTo(frame.size.width).multipliedBy(0.2)
             }
             
-            let repeatPasswordTextField = PasswordTextField(frame: CGRect(x: 0, y: 0, width: passwordTextField.frame.size.width, height: passwordTextField.frame.size.height))
-            addSubview(repeatPasswordTextField)
-            repeatPasswordTextField.snp.makeConstraints { make in
+            repeatPasswordTextField = PasswordTextField(frame: CGRect(x: 0, y: 0, width: passwordTextField.frame.size.width, height: passwordTextField.frame.size.height))
+            addSubview(repeatPasswordTextField!)
+            repeatPasswordTextField!.snp.makeConstraints { make in
                 make.top.equalTo(repeatPasswordLabel.snp.bottom)
                 make.left.equalTo(passwordTextField)
                 make.right.equalTo(passwordTextField)
@@ -49,12 +61,74 @@ class SignUpView: LoginView{
             }
 
             loginButton.snp.remakeConstraints { make in
-                make.top.equalTo(repeatPasswordTextField.snp.bottom).offset(frame.size.width * 0.1)
+                make.top.equalTo(repeatPasswordTextField!.snp.bottom).offset(frame.size.width * 0.1)
                 make.centerX.equalToSuperview()
                 make.width.equalToSuperview().multipliedBy(0.5)
                 make.height.equalToSuperview().multipliedBy(0.12)
             }
         }
-        
     }
+    
+    override func checkEmail() {
+        isValidEmail = false
+        if emailTextField!.isValidEmail(){
+            if let email = emailTextField!.text, dictionaryEmailPasswordTestUser.keys.contains(email){
+                errorLabel.text = emailError.userExist.rawValue
+                return
+            }
+            isValidEmail = true
+            errorLabel.text = ""
+            return
+        }
+        errorLabel.text = emailError.invalidAddres.rawValue
+    }
+    
+    override func CheckPassword() {
+        isValidPassword = false
+        if let password = passwordTextField?.text {
+            if password.count < 8{
+                errorLabel.text = PasswordError.weakPassword.rawValue
+                return
+            }
+            let uppercaseLetterRegex  = ".*[A-Z]+.*"
+            var uppercasePredicate = NSPredicate(format:"SELF MATCHES %@", uppercaseLetterRegex)
+            var uppercaseResult = uppercasePredicate.evaluate(with: password)
+            if !uppercaseResult{
+                errorLabel.text = PasswordError.missingUppercase.rawValue
+                return
+            }
+            
+            let lowercaseLetterRegex = ".*[a-z]+.*"
+            var lowercasePredicate = NSPredicate(format:"SELF MATCHES %@", lowercaseLetterRegex)
+            var lowercaseResult = lowercasePredicate.evaluate(with: password)
+            if !lowercaseResult{
+                errorLabel.text = PasswordError.missingLowercase.rawValue
+                return
+            }
+            
+            let digitRegex = ".*[0-9]+.*"
+            var digitPredicate = NSPredicate(format:"SELF MATCHES %@", digitRegex)
+            var digitResult = digitPredicate.evaluate(with: password)
+            if !digitResult{
+                errorLabel.text = PasswordError.missingDigit.rawValue
+                return
+            }
+            
+            let specialCharacterRegex = ".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]+.*"
+            var specialPredicate = NSPredicate(format:"SELF MATCHES %@", specialCharacterRegex)
+            var specialResult = specialPredicate.evaluate(with: password)
+            if !specialResult{
+                errorLabel.text = PasswordError.missingSpecialCharacter.rawValue
+                return
+            }
+            
+            if let repeatPassword = repeatPasswordTextField?.text, repeatPassword != password{
+                errorLabel.text = PasswordError.passwordMismatch.rawValue
+                return
+            }
+            
+            errorLabel.text = ""
+        }
+    }
+    
 }

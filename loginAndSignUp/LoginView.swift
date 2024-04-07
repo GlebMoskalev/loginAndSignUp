@@ -8,8 +8,18 @@
 import UIKit
 import SnapKit
 
+enum emailError: String {
+    case invalidAddres = "Invalid email address"
+    case userNotExist = "User with this email does not exist"
+    case userExist = "User with this email already exists"
+}
+
 
 class LoginView: UIView{
+    let dictionaryEmailPasswordTestUser = ["swift@icloud.com" : "Swift!24"]
+    var isValidEmail = false
+    var isValidPassword = false
+    
     let emailLabel = UILabel()
     let passwordLabel = UILabel()
     let signUpLabel = UILabel()
@@ -101,15 +111,39 @@ class LoginView: UIView{
             make.bottom.equalTo(loginButton.snp.top)
             make.centerX.equalToSuperview()
         }
-        
     }
     
     @objc func loginTouch(sender: UIButton){
-        if let (errorMessage, isValidEmail) = emailTextField?.checkEmail(){
-            errorLabel.text = errorMessage
-            if isValidEmail{
-                print("sfsf")
+        checkEmail()
+        if !isValidEmail { return }
+        CheckPassword()
+        if !isValidPassword { return }
+        
+    }
+    
+    func checkEmail(){
+        isValidEmail = false
+        if emailTextField!.isValidEmail(){
+            
+            if let email = emailTextField!.text, dictionaryEmailPasswordTestUser.keys.contains(email){
+                errorLabel.text = ""
+                isValidEmail = true
+                return
             }
+            errorLabel.text = emailError.userNotExist.rawValue
+            return
         }
+        
+        errorLabel.text = emailError.invalidAddres.rawValue
+    }
+    
+    func CheckPassword(){
+        if let password = passwordTextField?.text, dictionaryEmailPasswordTestUser.values.contains(password){
+            isValidPassword = true
+            errorLabel.text = ""
+            return
+        }
+        errorLabel.text = PasswordError.incorrectPassword.rawValue
+        isValidPassword = false
     }
 }
